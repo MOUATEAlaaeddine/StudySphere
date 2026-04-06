@@ -31,8 +31,8 @@ StudySphere is a premium, full-stack web application designed to help university
 ### 2. Backend Setup
 ```bash
 cd server
-# Copy .env and fill in your MONGO_URI and HUGGINGFACE_API_KEY
-# (Note: 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 is already set)
+# Copy .env.example to .env and fill in your keys
+cp .env.example .env
 pip3 install -r requirements.txt
 python3 app.py
 ```
@@ -75,8 +75,9 @@ MONGO_URI=mongodb://127.0.0.1:27017/studysphere
 # For MongoDB Atlas:
 # MONGO_URI=mongodb+srv://<user>:<password>@cluster.mongodb.net/studysphere
 
-SECRET_KEY=your_secret_key
-HUGGINGFACE_API_KEY=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
+SECRET_KEY=your_secret_key_here
+HUGGINGFACE_API_KEY=your_huggingface_api_key_here
+GITHUB_TOKEN=your_github_token_here
 UPLOAD_FOLDER=uploads
 MAX_CONTENT_LENGTH=16777216
 ```
