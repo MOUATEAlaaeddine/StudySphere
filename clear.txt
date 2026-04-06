@@ -1,0 +1,59 @@
+# PROJECT STATUS: StudySphere (aka StudyMap)
+Date: 2026-03-29
+
+## 1. WHERE WE AT (CURRENT SITUATION)
+
+The project is a fully functional revision management platform with a React frontend and a Flask backend.
+
+### Tech Stack
+-   **Frontend**: Vite + React + Axios + React-Router.
+-   **Backend**: Flask + Flask-CORS + Flask-SocketIO (for real-time features).
+-   **Database**: MongoDB (using pymongo and BSON ObjectIds).
+
+### Core Features (Working)
+*   **Authentication**: Login and Register (User session stored in MongoDB).
+*   **Subject Management**: Add subjects with exam dates, descriptions, and custom theme colors.
+*   **Resource Center**: Upload and list PDF materials per subject.
+*   **Dashboard**: Features 3 real-time stats (Mes Matières, Today's Sessions, Today's Hours). Shows clickable session cards for today's tasks.
+*   **AI Assistant**: Context-aware AI that answers questions based on uploaded PDF documents.
+*   **Real-time Chat**: Group chat for each subject using Socket.IO.
+*   **Revision Planner (Calendar)**: 
+    *   Weekly view with Monday-to-Sunday layout.
+    *   Highlights "Today" and dims past days (50% opacity).
+    *   Compact session cards showing subject name and time.
+    *   Max 3 sessions visible per day with an "expand" (+ X de plus) button.
+*   **Study Sessions**:
+    *   Auto-generated based on exam dates (every 2 days).
+    *   Rich content: auto-populates "Study Method", "Key Objectives", and "Revision Tips" based on subject name (Math, Security, AI, etc.).
+    *   Detail Modal: Clickable cards open a modal to:
+        *   Check off individual objectives.
+        *   Toggle Status (À faire / En cours / Terminé).
+        *   Download linked PDF materials.
+
+### Recent Fixes
+-   Standardized `user_id` as MongoDB `ObjectId` across all collections (Users, Subjects, Documents, Messages).
+-   Fixed dashboard counters to accurately reflect today's progress and hours.
+-   Polished Calendar UI for better visual organization.
+-   Added PDF download API in `documents.py`.
+
+---
+
+## 2. FUTURE PLANS (WHERE TO GO NEXT)
+
+The platform has a strong foundation, but here are the next logical steps for a new model or person taking over:
+
+### Feature Enhancements
+-   **Granular Status**: More robust tracking for "In Progress" sessions (e.g., adding a timer).
+-   **AI Summaries**: Use the existing AI architecture to automatically summarize uploaded PDFs.
+-   **Quiz Generation**: Add a button to generate a quiz/MCQ from a PDF to test knowledge.
+-   **Notifications**: Add browser or email notifications for upcoming exams or sessions.
+
+### Technical Debt / Improvements
+-   **Mobile Layout**: While mostly responsive, some CSS (like the calendar grid) could be further optimized for mobile devices.
+-   **Search & Filter**: Add a global search bar to find subjects or specific documents quickly.
+-   **Study Groups**: Allow users to share their planning with others studying the same subject.
+-   **External Integration**: Export sessions to Google Calendar or Outlook.
+
+### Configuration
+-   Backend is currently on port `5001` (Vite proxies `/api` to it).
+-   Local MongoDB URI is using `127.0.0.1` for macOS compatibility.

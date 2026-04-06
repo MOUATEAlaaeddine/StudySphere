@@ -1,0 +1,74 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+venv/
+env/
+.venv/
+
+# ── Environment & Secrets (NEVER commit) ──────────────────────
+.env
+.env.*
+*.env
+server/.env
+client/.env
+*.secret
+secrets/
+config/secrets.*
+
+# ── Uploads & User Files ──────────────────────────────────────
+server/uploads/
+uploads/
+# Common upload file types (if stored anywhere else)
+*.pdf
+*.docx
+*.doc
+*.xlsx
+*.xls
+*.pptx
+*.ppt
+*.zip
+*.tar.gz
+*.rar
+*.mp4
+*.mp3
+*.mov
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+
+# ── Databases ─────────────────────────────────────────────────
+*.db
+*.sqlite
+*.sqlite3
+
+# ── Node.js / React ───────────────────────────────────────────
+client/node_modules/
+node_modules/
+client/dist/
+client/.vite/
+
+# ── macOS ─────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.Spotlight-V100
+.Trashes
+
+# ── IDE ───────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ── Logs ──────────────────────────────────────────────────────
+*.log
+npm-debug.log*
+logs/
